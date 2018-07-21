@@ -21,7 +21,7 @@
         </form>
         `,
         render(data = {}) {
-            let placeholders = ['name', 'singer', 'url','id']
+            let placeholders = ['name', 'singer', 'url', 'id']
             let html = this.template
             placeholders.map((string) => {
                 html = html.replace(`__${string}__`, data[string] || '')
@@ -39,10 +39,10 @@
             song.set('name', data.name);
             song.set('singer', data.singer);
             song.set('url', data.url);
-            return song.save().then( (newSong)=>{
-                let {id,attributes} = newSong
-                this.data = {id,...attributes}
-            }, (error)=>{
+            return song.save().then((newSong) => {
+                let { id, attributes } = newSong
+                this.data = { id, ...attributes }
+            }, (error) => {
                 console.error(error);
             });
         }
@@ -54,21 +54,56 @@
             this.view.render(this.model.data);
             this.bindEvents();
             window.eventHub.on('upload', (data) => {
-                this.view.render(data)
+                this.model.data = data
+                this.view.render(this.model.data)
+            })
+            window.eventHub.on('select', (data) => {
+                this.model.data = data
+                this.view.render(this.model.data)
+
+            })
+            window.eventHub.on('new', () => {
+                if (this.model.data.id) {
+                    this.model.data = {}
+                    this.view.render(this.model.data)
+                }
+
+            })
+        },
+        create() {
+            let needs = ['name', 'singer', 'url']
+            let data = {}
+            needs.map((string) => {
+                data[string] = $(this.view.el).find(`[name="${string}"]`).val()
+            })
+            this.model.create(data).then(() => {
+                this.view.render({})
+                window.eventHub.emit('create', this.model.data)
+            })
+        },
+        updata() {
+            let needs = ['name', 'singer', 'url']
+            let data = {}
+            needs.map((string) => {
+                data[string] = $(this.view.el).find(`[name="${string}"]`).val()
+            })
+            var song = AV.Object.createWithoutData('Song',this.model.data.id)
+            song.set('name',data.name)
+            song.set('singer',data.singer)
+            song.set('url',data.url)
+            data.id = this.model.data.id
+            song.save().then(()=>{
+                window.eventHub.emit('updata',JSON.parse(JSON.stringify(data)))
             })
         },
         bindEvents() {
             $(this.view.el).on('submit', 'form', (e) => {
                 e.preventDefault()
-                let needs = ['name', 'singer', 'url']
-                let data = {}
-                needs.map((string) => {
-                    data[string] = $(this.view.el).find(`[name="${string}"]`).val()
-                })
-                this.model.create(data).then(()=>{
-                    this.view.render({})
-                    window.eventHub.emit('create',this.model.data)
-                })
+                if (this.model.data.id) {
+                    this.updata()
+                } else {
+                    this.create()
+                }
             })
         }
     }

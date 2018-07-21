@@ -13,17 +13,35 @@
             <div id="uploadStatus"></div>
             </div>
         `,
-        render(){
+        render(data = {}){
             $(this.el).html(this.template)
+            if(data.id){
+                $(this.el).html('<h2>网易云音乐后台管理-编辑歌曲</h2>')
+            }else{
+                $(this.el).prepend('<h2>网易云音乐后台管理-新建歌曲</h2>')
+            }
         }
     }
-    let model = {}
+    let model = {
+        data: {
+            name: '',singer: '',url: '',id: ''
+        }
+    }
     let controller = {
         init(view,model){
             this.view = view;
             this.model = model;
             this.view.render(this.model.data);
             this.uploadInit()
+            window.eventHub.on('select',(data)=>{
+                this.model.data = data
+                this.view.render(this.model.data)
+            })
+            window.eventHub.on('new',()=>{
+                this.model.data = {name: '',singer: '',url: '',id: ''}
+                this.view.render(this.model.data)
+                this.uploadInit()
+            })
         },
         uploadInit(){
             var uploader = Qiniu.uploader({
