@@ -6,15 +6,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>网易云音乐</title>
-    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
-    
+    <header>
+        <div class="logo"></div>
+        <button class="downloadButton">下载APP</button>
+    </header>
+    <nav>
+        <li>
+            <div class="active">
+                <span>推荐音乐</span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span>热歌榜</span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span>搜索</span>
+            </div>
+        </li>
+    </nav>
+    <main>
+        <div class="page1">
+            <div class="page1-1">
+                <div class="songsList">推荐歌单</div>
+                <ul>
+                    <li>
+                        <div>
+                            <div class="songCover">
+                                <img src="./img/1.webp">
+                            </div>
+                            <div class="songIntroduce">
+                                倦事主义者的生活态度
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="songCover">
+                                    <img src="./img/2.webp">
+                            </div>
+                            <div class="songIntroduce">
+                                    华语说唱|刻上你的
+                                <p>
+                                    温柔，淌入我的舌头
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="songCover">
+                                <img src="./img/3.webp">
+                            </div>
+                            <div class="songIntroduce">
+                                一些适合男生的城市民谣
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="songCover">
+                                <img src="./img/4.webp">
+                            </div>
+                            <div class="songIntroduce">
+                                《四大名著》央视版 电视剧配乐原声
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="songCover">
+                                <img src="./img/5.webp">
+                            </div>
+                            <div class="songIntroduce">
+                                午睡民谣
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="songCover">
+                                <img src="./img/6.webp">
+                            </div>
+                            <div class="songIntroduce">
+                                毛阿姨唱过的歌
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="page1-2">
+
+            </div>
+
+        </div>
+
+
+        <div class="page2"></div>
+        <div class="page3"></div>
+    </main>
+
+    <script>
+        var pageWidth = window.innerWidth;
+        document.write(`
+            <style>
+                html{
+                    font-size: ${pageWidth / 10}px;
+                }
+            </style>
+            `)
+    </script>
     <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
     <script src="./js/init/av.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./js/admin/eventHub.js"></script>
+    <script src="./js/index/tabs.js"></script>
 </body>
 
 </html>

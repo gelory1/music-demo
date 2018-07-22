@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul,ol,li{
+    list-style: none;
+}
+body{
+    font-size: 16px;
+}
+header{
+    height: 1.7rem;
+    background-color: #D43C33;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    width: 3.8rem;
+    height: 0.8rem;
+    background: url('../img/music-logo-white.png') no-repeat center;
+    background-size: 100%;
+}
+header .downloadButton{
+    padding: 4px 9px;
+    border: 1px solid #DD665F;
+    background-color: transparent;
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+}
+nav{
+    
+    display: flex;
+    justify-content: space-around;
+}
+nav li{
+    width: 3.33rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+nav li div{
+    display: inline-block;
+    padding: 10px 5px;
+}
+nav li div.active{
+    border-bottom: 2px solid #DA665F;
+    color: #D33A31;
+}
+main .page1 .page1-1 .songsList{
+    margin: 15px 0;
+    padding-left: 10px;
+    border-left: 2px solid #DA665F;
+}
+main .page1 .page1-1 ul{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+main .page1 .page1-1 .songCover img{
+    width: 3.2rem;
+}
+main .page1 .page1-1 .songIntroduce{
+    width: 3.33rem;
+    font-size: 13px;
+    padding: 6px 2px 0 6px;
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    color: rgb(51,51,51)
+}
+main .page1 .page1-1 .songIntroduce p{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
