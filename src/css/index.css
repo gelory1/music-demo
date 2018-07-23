@@ -9,13 +9,21 @@ ul,ol,li{
 body{
     font-size: 16px;
 }
+a{
+    text-decoration:none; color:#000; outline:none;
+}
 header{
+    width: 10rem;
     height: 1.7rem;
     background-color: #D43C33;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 header .logo{
     width: 3.8rem;
@@ -31,25 +39,39 @@ header .downloadButton{
     color: white;
     font-size: 15px;
 }
+
 nav{
-    
+    position: fixed;
+    top: 1.7rem;
+    left: 0;
     display: flex;
     justify-content: space-around;
+    z-index: 2;
 }
 nav li{
     width: 3.33rem;
     text-align: center;
     border-bottom: 1px solid #eee;
+    background-color: white;
 }
 nav li div{
     display: inline-block;
     padding: 10px 5px;
 }
-nav li div.active{
+nav li.active div{
     border-bottom: 2px solid #DA665F;
     color: #D33A31;
 }
-main .page1 .page1-1 .songsList{
+main{
+    margin-top: 3.3rem;
+}
+main .page1,main .page2,main .page3{
+    display: none;
+}
+main .page1.active,main .page2.active,main .page3.active{
+    display: block;
+}
+main .page1 .songsList{
     margin: 15px 0;
     padding-left: 10px;
     border-left: 2px solid #DA665F;
@@ -60,10 +82,32 @@ main .page1 .page1-1 ul{
     flex-flow: row wrap;
 }
 main .page1 .page1-1 .songCover img{
-    width: 3.2rem;
+    width: 3.28rem;
+    height: 3.28rem;
 }
+main .page1 .page1-1 .songCover{
+    position: relative;
+}
+main .page1 .page1-1 .songCover .songTimes{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+    text-align: right;
+    padding: 2px 6px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
+}
+main .page1 .page1-1 .songCover .songTimes .icon{
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: white;
+    overflow: hidden;
+ }
+
 main .page1 .page1-1 .songIntroduce{
-    width: 3.33rem;
+    width: 3.28rem;
     font-size: 13px;
     padding: 6px 2px 0 6px;
     height: 40px;
@@ -75,4 +119,67 @@ main .page1 .page1-1 .songIntroduce p{
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow: hidden;
+}
+main .page1 .page1-2 .icon{
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+main .page1 .page1-2{
+    padding-bottom: 50px;
+}
+main .page1 .page1-2 ul li .songWrapper{
+    display: flex;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    margin-left: 10px; 
+}
+main .page1 .page1-2 ul li .songWrapper .songWrapper-info{
+    flex-grow: 1;
+    padding: 5px 0;
+}
+main .page1 .page1-2 ul li .songWrapper .songWrapper-info .songSinger{
+    font-size: 12px;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+main .page1 .page1-2 ul li .songWrapper .songWrapper-info .singer{
+    
+    color: rgb(136,136,136)
+}
+
+main .page1 .page1-2 ul li .songWrapper .playLogo{
+    padding: 5px;
+}
+main .page1 .page1-2 ul li .songWrapper .playLogo .icon{
+    width: 2em;
+    height: 2em;
+    fill: #AAA;
+}
+main .page1 footer{
+    padding-top: 20px; 
+    background: url("../img/recommand_bg_3x.png") no-repeat center;
+    background-size: cover;
+}
+main .page1 footer .footerLogo{
+    width: 6.8rem;
+    height: 1.1rem;
+    margin: 10px auto;
+    background: url("../img/网易云.png") no-repeat center;
+    background-size: cover;
+}
+main .page1 footer .openAPP{
+    padding: 10px 20px;
+    border: 1px solid red;
+    border-radius: 20px;
+    color: #d33a31;
+    width: 8rem;
+    margin: 5px auto;
+    text-align: center;
+}
+main .page1 footer p.copyright{
+    font-size: 10px;
+    color: #888;
+    text-align: center;
+    padding: 5px 0 20px 0;
 }

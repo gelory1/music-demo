@@ -15,24 +15,24 @@
         <button class="downloadButton">下载APP</button>
     </header>
     <nav>
-        <li>
-            <div class="active">
+        <li class="active" page-name="page1">
+            <div>
                 <span>推荐音乐</span>
             </div>
         </li>
-        <li>
+        <li page-name="page2">
             <div>
                 <span>热歌榜</span>
             </div>
         </li>
-        <li>
+        <li page-name="page3">
             <div>
                 <span>搜索</span>
             </div>
         </li>
     </nav>
     <main>
-        <div class="page1">
+        <div class="page1 active">
             <div class="page1-1">
                 <div class="songsList">推荐歌单</div>
                 <ul>
@@ -40,6 +40,12 @@
                         <div>
                             <div class="songCover">
                                 <img src="./img/1.webp">
+                                <div class="songTimes">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-headphone_f"></use>
+                                    </svg>
+                                    <span>78万</span>
+                                </div>
                             </div>
                             <div class="songIntroduce">
                                 倦事主义者的生活态度
@@ -49,14 +55,20 @@
                     <li>
                         <div>
                             <div class="songCover">
-                                    <img src="./img/2.webp">
+                                <img src="./img/2.webp">
+                                <div class="songTimes">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-headphone_f"></use>
+                                    </svg>
+                                    <span>78万</span>
+                                </div>
                             </div>
                             <div class="songIntroduce">
-                                    华语说唱|刻上你的
+                                华语说唱|刻上你的
                                 <p>
                                     温柔，淌入我的舌头
                                 </p>
-                                
+
                             </div>
                         </div>
                     </li>
@@ -64,6 +76,12 @@
                         <div>
                             <div class="songCover">
                                 <img src="./img/3.webp">
+                                <div class="songTimes">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-headphone_f"></use>
+                                    </svg>
+                                    <span>78万</span>
+                                </div>
                             </div>
                             <div class="songIntroduce">
                                 一些适合男生的城市民谣
@@ -74,6 +92,12 @@
                         <div>
                             <div class="songCover">
                                 <img src="./img/4.webp">
+                                <div class="songTimes">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-headphone_f"></use>
+                                    </svg>
+                                    <span>78万</span>
+                                </div>
                             </div>
                             <div class="songIntroduce">
                                 《四大名著》央视版 电视剧配乐原声
@@ -84,6 +108,12 @@
                         <div>
                             <div class="songCover">
                                 <img src="./img/5.webp">
+                                <div class="songTimes">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-headphone_f"></use>
+                                    </svg>
+                                    <span>78万</span>
+                                </div>
                             </div>
                             <div class="songIntroduce">
                                 午睡民谣
@@ -94,6 +124,12 @@
                         <div>
                             <div class="songCover">
                                 <img src="./img/6.webp">
+                                <div class="songTimes">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-headphone_f"></use>
+                                    </svg>
+                                    <span>78万</span>
+                                </div>
                             </div>
                             <div class="songIntroduce">
                                 毛阿姨唱过的歌
@@ -102,17 +138,29 @@
                     </li>
                 </ul>
             </div>
-
             <div class="page1-2">
-
+                <div class="songsList">最新音乐</div>
+                <ul></ul>
             </div>
-
+            <footer>
+                    <div class="footerLogo">
+            
+                    </div>
+                    <div class="openAPP">
+                        打开APP，发现更多好音乐 >
+                    </div>
+                    <p class="copyright">
+                        网易公司版权所有©1997-2018   杭州乐读科技有限公司运营
+                    </p>
+            </footer>
         </div>
 
+        <div class="page2">22222222</div>
 
-        <div class="page2"></div>
-        <div class="page3"></div>
+        <div class="page3">33333333</div>
+
     </main>
+    
 
     <script>
         var pageWidth = window.innerWidth;
@@ -124,11 +172,15 @@
             </style>
             `)
     </script>
+    <script src="//at.alicdn.com/t/font_758530_75oiv8p25ux.js"></script>
     <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
     <script src="./js/init/av.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./js/admin/eventHub.js"></script>
     <script src="./js/index/tabs.js"></script>
+    <script src="./js/index/page1.js"></script>
+    <script src="./js/index/page1-1.js"></script>
+    <script src="./js/index/page1-2.js"></script>
 </body>
 
 </html>
