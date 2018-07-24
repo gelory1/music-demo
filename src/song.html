@@ -6,16 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>歌曲播放页面</title>
+    <link rel="stylesheet" href="./css/song.css">
 </head>
-<style>
-</style>
-<body>
-    歌曲播放中
-    <main>
 
-    </main>
-    
-    
+<body>
+    <div class="page">
+        <header>
+            <div class="logo">
+
+            </div>
+        </header>
+        <main>
+            <div class="songPlayWrapper">
+                <div class="songPlay">
+                    <div class="songCover">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533017427&di=bd6f7f1a1d37aa1263c1b752fa57dd50&imgtype=jpg&er=1&src=http://imgsrc.baidu.com/imgad/pic/item/cdbf6c81800a19d87012672139fa828ba61e4685.jpg">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+
+    <script>
+        var pageWidth = window.innerWidth;
+        document.write(`
+                <style>
+                    html{
+                        font-size: ${pageWidth / 10}px;
+                    }
+                </style>
+                `)
+    </script>
     <script src="../node_modules/leancloud-storage/dist/av-min.js"></script>
     <script src="./js/init/av.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>

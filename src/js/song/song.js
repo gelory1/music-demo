@@ -1,6 +1,6 @@
 {
     let view = {
-        el: 'main',
+        el: ',,,.page',
         template: `
             <audio src={{url}}></audio>
             <div>
