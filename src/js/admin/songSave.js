@@ -16,12 +16,20 @@
                 <input name="url" type="text" value="__url__">
             </div>
             <div class="row">
+                <label>封面</label>
+                <input name="cover" type="text" value="__cover__">
+            </div>
+            <div class="row lyric">
+                <label>歌词</label>
+                <textarea name="lyrics">__lyrics__</textarea>
+            </div>
+            <div class="row">
                 <button type="submit">保存</button>
             </div>
         </form>
         `,
         render(data = {}) {
-            let placeholders = ['name', 'singer', 'url', 'id']
+            let placeholders = ['name', 'singer', 'url', 'id','cover','lyrics']
             let html = this.template
             placeholders.map((string) => {
                 html = html.replace(`__${string}__`, data[string] || '')
@@ -31,7 +39,7 @@
     }
     let model = {
         data: {
-            name: '', singer: '', url: '', id: ''
+            name: '', singer: '', url: '', id: '', cover: '', lyrics: ''
         },
         create(data) {
             var Song = AV.Object.extend('Song');
@@ -39,6 +47,8 @@
             song.set('name', data.name);
             song.set('singer', data.singer);
             song.set('url', data.url);
+            song.set('cover', data.cover);
+            song.set('lyrics', data.lyrics);
             return song.save().then((newSong) => {
                 let { id, attributes } = newSong
                 this.data = { id, ...attributes }
@@ -71,7 +81,7 @@
             })
         },
         create() {
-            let needs = ['name', 'singer', 'url']
+            let needs = ['name', 'singer', 'url', 'cover', 'lyrics']
             let data = {}
             needs.map((string) => {
                 data[string] = $(this.view.el).find(`[name="${string}"]`).val()
@@ -82,7 +92,7 @@
             })
         },
         updata() {
-            let needs = ['name', 'singer', 'url']
+            let needs = ['name', 'singer', 'url', 'cover', 'lyrics']
             let data = {}
             needs.map((string) => {
                 data[string] = $(this.view.el).find(`[name="${string}"]`).val()
@@ -91,6 +101,8 @@
             song.set('name',data.name)
             song.set('singer',data.singer)
             song.set('url',data.url)
+            song.set('cover',data.cover)
+            song.set('lyrics',data.lyrics)
             data.id = this.model.data.id
             song.save().then(()=>{
                 window.eventHub.emit('updata',JSON.parse(JSON.stringify(data)))

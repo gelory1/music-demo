@@ -80,8 +80,8 @@ input[type="submit"],button{
 .page main .uploadAndSave h2{
     margin: 20px 10px;
 }
-.page main section.uploadSong .upload #uploadButtonWrapper {
-    padding: 250px 0 30px;
+.page main section.uploadSong .upload #uploadButtonWrapper{
+    padding: 230px 0 30px 0;
     border: 1px solid #333758;
     border-radius: 20px;
     display: flex;
@@ -117,12 +117,30 @@ input[type="submit"],button{
     margin: 10px;
 }
 .page main section.saveSong .row input[type="text"]{
-    margin-left: 2px;
+    margin-left: 5px;
     border-radius: 3px;
     border: 1px solid #333758;
     line-height: 1.5em;
     padding: 5px;
 }
+.page main section.saveSong .row textarea{
+    margin-left: 10px;
+    width: 300px;
+    height: 100px;
+    border: 1px solid #333758;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+}
+.page main section.saveSong .row label{
+    margin-top: 2px;
+}
+.page main section.saveSong .row.lyric{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
 .page main section.saveSong .row button{
     background-color: #333758;
     border-radius: 10px;

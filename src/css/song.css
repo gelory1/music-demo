@@ -5,23 +5,27 @@
 }
 .page{
     width: 10rem;
-    height: 100vh;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.8);
     display: flow-root;
 }
-.page::after{
+.wrapper{
     content: '';
     display: block;
     width: 10rem;
     height: 100vh;
-    background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1533017427&di=bd6f7f1a1d37aa1263c1b752fa57dd50&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fcdbf6c81800a19d87012672139fa828ba61e4685.jpg') no-repeat center;
-    background-size: cover;
-    z-index: 1;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.bkg-cover{
+    width: 10rem;
+    height: 100vh;
+    background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532532551874&di=102e08b889d14759c0ea29e6239d6e0f&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180119%2F9340fdb3a4c2498099d34041e5bd3ea4.jpeg') no-repeat center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    filter: blur(15px);
     z-index: -1;
 }
 .page header .logo{
@@ -67,6 +71,7 @@
     justify-content: center;
     align-items: center;
     height: 8.5rem;
+    position: relative;
 }
 .page main .songPlayWrapper .songPlay .songCover img{
     width: 5.3rem;
@@ -74,6 +79,12 @@
     border-radius: 50%;
     overflow: hidden;
     animation: playing 15s linear infinite;
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+.page main .songPlayWrapper .songPlay .songCover.active img{
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
 }
 @keyframes playing{
     0%{
@@ -82,4 +93,73 @@
     100%{
         transform: rotate(360deg);
     }
+}
+.page main .songPlayWrapper .songPlay .songCover .playLogo{
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url('../img/play.png') no-repeat center rgba(0, 0, 0, 0.5) ;
+    background-size: cover;
+    position: absolute;
+    top: 3.5rem;
+    margin: 0 auto;
+    border-radius: 50%; 
+}
+.page main .songPlayWrapper .songPlay .songCover .playLogo.active{
+    display: none;
+}
+.page main .lyricWrapper{
+    min-height: 11.56rem;
+    padding: 30px;
+}
+.page main .lyricWrapper h3{
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 100;
+    padding: 10px;
+}
+.page main .lyric{
+    color: #B8B3B1;
+    height: 2.2rem;
+    overflow: hidden;
+    font-size: 15px;
+    text-align: center;
+}
+.page main .lyric .lines{
+    transition: all 0.3s;
+}
+.page main .lyric .lines p{
+    margin: 0.5em 0;
+}
+.page main .lyric .lines p.active{
+    color: white;
+}
+
+footer.openAndDownload{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 10rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px 0.4rem 40px 0.4rem;
+}
+footer.openAndDownload button{
+    width: 4.4rem;
+    padding: 8px 0;
+    border-radius: 20px;
+    font-size: 18px;
+    background-color: transparent;
+}
+footer.openAndDownload .openButton{
+    border: 1px solid #D33A31;
+    color: #D33A31;
+}
+footer.openAndDownload .downloadButton{
+    border: none;
+    background-color: #D33A31;
+    color: white;
 }
