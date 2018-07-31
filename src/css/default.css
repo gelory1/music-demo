@@ -6,6 +6,10 @@
 ul,li{
     list-style:none;
 }
+a{
+    text-decoration: none;
+}
+
 input{
     outline: none;
 }
@@ -16,7 +20,6 @@ input[type="submit"],button{
 }
 .page{
     display: flex;
-    height: 100vh;
 }
 .page aside{
     display: flex;
@@ -68,7 +71,12 @@ input[type="submit"],button{
 .page aside .songList ul li.active{
     background-color: #2A2C44;
 }
-
+.page main .addPlaylist a{
+    background-color: #333758;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: white;
+}
 .page main{
     flex: 1;
     padding-right: 20px;
@@ -152,6 +160,14 @@ input[type="submit"],button{
 }
 .page main section.saveSong .row button:hover{
     background-color: #2A2C44;
+}
+.page main section.saveSong{
+    position: relative;
+}
+.page  .addPlaylist{
+    position: absolute;
+    top: 0;
+    left: 30%;
 }
 
 

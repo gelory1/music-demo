@@ -34,7 +34,7 @@
             this.view.render(this.model.data);
             this.uploadInit()
             window.eventHub.on('select',(data)=>{
-                this.model.data = data
+                this.model.data = data.data
                 this.view.render(this.model.data)
             })
             window.eventHub.on('new',()=>{
