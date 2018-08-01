@@ -53,10 +53,12 @@
         init(view,model){
             this.view = view
             this.model = model
+            
             this.model.find().then(()=>{
+                
                 this.view.render(this.model.data)
             })
-        },
+        }
 
     }
     controller.init(view,model)
