@@ -76,11 +76,12 @@
         bindEventHub(){
             window.eventHub.on('createPlaylist',(data)=>{
                 this.model.data.lists.push(data)
-                this.view.clearActive()
                 this.view.render(this.model.data)
+                this.view.clearActive()
             })
             window.eventHub.on('newPlaylist',()=>{
                 this.view.clearActive()
+
             })
             window.eventHub.on('updataPlaylist',(data)=>{
                 let lists = this.model.data.lists

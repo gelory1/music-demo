@@ -41,7 +41,7 @@
         },
         find(){
             var query = new AV.Query('Song')
-            return query.find().then((songs)=>{
+            return query.limit(10).descending('createdAt').find().then((songs)=>{
                 this.data.songs = songs.map((song)=>{
                     return {id:song.id,...song.attributes}
                 })
@@ -55,11 +55,9 @@
             this.model = model
             
             this.model.find().then(()=>{
-                
                 this.view.render(this.model.data)
             })
         }
-
     }
     controller.init(view,model)
 }

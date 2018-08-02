@@ -111,7 +111,6 @@
             this.model.findPlaylist().then(() => {
                 this.view.render(this.model.data, this.model.playlists);
                 this.onSelected()
-                
             })
             this.bindEvents()
 
@@ -126,9 +125,12 @@
                 this.onSelected()
             })
             window.eventHub.on('new', () => {
+                this.model.playlists.list = {}
                 if (this.model.data.id) {
+                    console.log(this.model.data)
+                    console.log(this.model.playlists)
                     this.model.data = {}
-                    this.model.playlists.list = {}
+                    this.onSelected()
                     this.view.render(this.model.data, this.model.playlists);
                 }
 
@@ -156,9 +158,6 @@
             needs.map((string) => {
                 data[string] = $(this.view.el).find(`[name="${string}"]`).val()
             })
-            
-           
-            
             var song = AV.Object.createWithoutData('Song', this.model.data.id)
             song.set('name', data.name)
             song.set('singer', data.singer)
@@ -185,10 +184,6 @@
                     this.create()
                 }
             })
-
-
-
-
         },
         onSelected() {
             $(document).ready(() => {

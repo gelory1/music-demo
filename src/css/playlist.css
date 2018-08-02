@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration:none; color:#000; outline:none;
+}
+body{
+    font-size: 16px;
+}
+header .playListInfo{
+    width: 10rem;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: flex-start;
+    padding: 30px 15px;
+    overflow: hidden;
+}
+header .playListInfo .infoBkg{
+    width: 10rem;
+    height: 100%;
+    
+    background-size: cover;
+    filter: blur(15px);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+header .playListInfo img,
+header .playListInfo .imgCover{
+    width: 3.4rem;
+    height: 3.4rem;
+}
+header .playListInfo .imgCover{
+    position: relative;
+}
+header .playListInfo .imgCover::after{
+    content: '歌单';
+    font-size: 0.5em;
+    display: block;
+    position: absolute;
+    top: 0.3rem;
+    left: -0.2rem;
+    padding: 2px 0.2rem 2px 0.4rem;
+    border-radius: 20px;
+    background-color: #CB433F;
+    color: white;
+}
+header .playListInfo .songTimes{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    font-size: 12px;
+    width: 100%;
+    text-align: right;
+    padding: 2px 6px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
+}
+header .playListInfo .songTimes .icon{
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: white;
+    overflow: hidden;
+ }
+header .playListInfo .playlistRightWrapper{
+     display: flex;
+     flex-flow: column;
+     justify-content: flex-start;
+     padding-left: 15px;
+}
+header .playListInfo .playlistRightWrapper .playListName{
+    font-size: 18px;
+    color: white;
+}
+header .playListInfo .playlistRightWrapper .playListUploader{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+}
+header .playListInfo .playlistRightWrapper .playListUploader .head{
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 5px;
+}
+header .playListInfo .playlistRightWrapper .playListUploader img{
+    width: 0.8rem;
+    height: 0.8rem;
+}
+header .playListInfo .playlistRightWrapper .playListUploader .uploader{
+    color: #ccc;
+}
+header .playListSummary{
+    padding: 20px 15px;
+    color: #666;
+}
+main h3{
+    font-weight: 100;
+    font-size: 14px;
+    color: #666;
+    background-color: #eeeff0;
+    padding: 3px 10px;
+}
+
+
+
+main .playList ul li{
+    padding: 10px 0;
+}
+main .playList ul a{
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+}
+main .playList ul li .songNumber{
+    padding: 10px;
+    font-size: 17px;
+    color: #999;
+}
+main .playList ul li .songInfo{
+    flex-grow: 1;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+main .playList ul li .songInfo .songName{
+    font-size: 17px;
+    color: #333;
+}
+main .playList ul li .songInfo .songSinger{
+    font-size: 12px;
+    color: #888;
+}
+main .playList ul li .songInfo .songSinger .SQ{
+    background: url('../img/page2热歌榜.png') no-repeat;
+    background-size: 165px;
+    width: 16px;
+    padding-bottom: 14.5px;
+    display: inline-block;
+    background-position-y: 6.5px;
+}
+main .playList ul li .songPlayLogo{
+    background: url('../img/page2热歌榜.png') no-repeat;
+    background-size: 175px;
+    width: 40px;
+    background-position: -18px 10px;
+    border-bottom: 1px solid #eee;
+}

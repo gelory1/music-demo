@@ -10,11 +10,11 @@
         render(data) {
             $(this.el).html(this.template)
             var query = new AV.Query('Song');
+            console.log(data)
             query.equalTo('dependent', data).find().then((songs) => {
+                console.log(songs)
                 songs.map((song) => {
-                    console.log(song)
                     let $li = $(`<li>${song.attributes.name}</li>`)
-                    console.log($li)
                     $(this.el).find('ul').append($li)
                 })
             })
@@ -28,7 +28,9 @@
             this.view = view
             this.model = model
             this.getAllSongs()
-
+            window.eventHub.on('newPlaylist',()=>{
+                $(this.view.el).html({})
+            })
         },
         getAllSongs() {
 

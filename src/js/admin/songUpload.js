@@ -51,7 +51,7 @@
                 get_new_uptoken: false,
                 domain: 'pbxrrj7bh.bkt.clouddn.com',     // bucket域名，下载资源时用到，必需
                 container: this.view.find('#uploadButtonWrapper'),             // 上传区域DOM ID，默认是browser_button的父元素
-                max_file_size: '10mb',             // 最大文件体积限制
+                max_file_size: '40mb',             // 最大文件体积限制
                 dragdrop: true,                     // 开启可拖曳上传
                 drop_element: this.view.find('#uploadButtonWrapper'),          // 拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
                 chunk_size: '4mb',                  // 分块上传时，每块的体积
@@ -67,10 +67,10 @@
                     },
                     'UploadProgress': function (up, file) {
                         // 每个文件上传时，处理相关的事情
-                        uploadStatus.textContent = '上传中'
+            
                     },
                     'FileUploaded': function (up, file, info) {
-                        uploadStatus.textContent = '上传完毕'
+                        
                         // 每个文件上传成功后，处理相关的事情
                         window.eventHub.emit('afterLoading')
                         var domain = up.getOption('domain');

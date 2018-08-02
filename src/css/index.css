@@ -246,6 +246,12 @@ main .page2 ol li .songPlayLogo{
     background-position: -18px 10px;
     border-bottom: 1px solid #eee;
 }
+main .page2 .prompt{
+    text-align: center;
+    color: #999;
+    padding: 20px 0;
+    font-size: 14px;
+}
 main .page3{
     position: relative;
 }
